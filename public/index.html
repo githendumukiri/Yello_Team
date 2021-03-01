@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyANhqxTsVia0Felx_z-QI45EoMn6q_Np0w",
+            authDomain: "yellow-team-wit.firebaseapp.com",
+            projectId: "yellow-team-wit",
+            storageBucket: "yellow-team-wit.appspot.com",
+            messagingSenderId: "333925899806",
+            appId: "1:333925899806:web:eff8e0e3633d101040580f",
+            measurementId: "G-6C6G2NZM19",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="app.js" defer></script>
+
+    <title>Yellow Team Solution</title>
+</head>
+
+<body>
+    
+    <section>
+        Session Name <input id="sessionNameBox" type="textfield" placeholder="Firebase"></input> <br></br>
+        Presenter <input id="presenterNameBox" type="textfield" placeholder="John Doe"></input> <br></br>
+        Session Start Time <input id="timeStart" type="time"></input> <br></br>
+        Session End Time <input id="timeEnd" type="time"></input> <br></br>
+        Session Room <input id="roomName" type="textfield" placeholder="Room A"></input> <br></br>
+        <br></br>
+        <button id="saveButton">Save</button>
+    </section>
+<!--------
+        <h1 id="sessionNameHeader"></h1>
+        <button id="loadButton">Load</button>
+--->
+</body>
+
+</html>
