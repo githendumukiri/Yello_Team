@@ -19,5 +19,16 @@ saveButton.addEventListener("click", function() {
     })
     .then(function() {
         console.log("saved!");
-    })
-})
+    });
+});
+
+getRealtimeUpdates = function() {
+    sessionRef.onSnapshot(function (doc) {
+        if(doc && doc.exists) {
+            const myData = doc.data();
+            sessionNameHeader.innerText = myData.Name;
+        }
+    });
+}
+
+getRealtimeUpdates();
