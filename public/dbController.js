@@ -72,18 +72,58 @@ export function insertRoomsData(room) {
 }
 
 
-// TODO: Create read fucntion for one session
+export function retrieveSingleSessionData(name) {
+  var ref = firebase.database().ref('session/');
 
-// TODO: Create read fucniton for all sessions
+  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
+    return snapshot.key;});
+}
 
-// TODO: Create read fucntion for one Timeslot
+export function retrieveAllSessionData() {
+  var ref = firebase.database().ref('session/');
+  
+  ref.orderByKey().on("child_added", function(snapshot) {
+    return snapshot.key;});
+}
 
-// TODO: Create read fucniton for all Timeslots
+export function retrieveSingleTimeslotData(startTime) {
+  var ref = firebase.database().ref('timeslots/');
+  
+  ref.orderByChild("startTime").equalTo(startTime).on("Value", function(snapshot) {
+    return snapshot.key;});
+  }
 
-// TODO: Create read fucntion for one presenter
+export function retrieveAllTimeslotData() {
+  var ref = firebase.database().ref('timeslots/');
+  
+  ref.orderByKey().on("child_added", function(snapshot) {
+    return snapshot.key;});
+  }
 
-// TODO: Create read fucniton for all presenters
+export function retrieveSinglePresenterData(name) {
+  var ref = firebase.database().ref('presenters/');
+  
+  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
+    return snapshot.key;});
+  }
 
-// TODO: Create read fucntion for one room
+export function retrieveAllPresenterData() {
+  var ref = firebase.database().ref('presenters/');
+  
+  ref.orderByKey().on("child_added", function(snapshot) {
+    return snapshot.key;});
+  }
 
-// TODO: Create read fucniton for all rooms
+export function retrieveSingleRoomData(name) {
+  var ref = firebase.database().ref('rooms/');
+  
+  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
+    return snapshot.key;});
+  }
+
+export function retrieveAllRoomData() {
+  var ref = firebase.database().ref('rooms/');
+  
+  ref.orderByKey().on("child_added", function(snapshot) {
+    return snapshot.key;});
+  }
