@@ -1,12 +1,13 @@
-import { insertSessionData,  insertPresenterData, insertTimeSlotsData, insertRoomsData } from dbController;
+import {insertSessionData, insertPresenterData, insertTimeSlotsData, insertRoomsData} from
+"dbController";
 
 export function formateSession(name, startTime, endTime, presenterName, presenterEmail, presenterPhone, roomName, roomCapacity) {
     //create sessions obj
     let session = {
         name: '',
         startTime: 0,
-        endTime: 0, 
-        Duration: function() {
+        endTime: 0,
+        Duration: function () {
             return this.endTime - this.startTime;
         },
         presenterName: '',
@@ -26,8 +27,8 @@ export function formateTimeSlot(startTime, endTime) {
     //create timeslot obj
     let timeslot = {
         startTime: 0,
-        endTime: 0, 
-        Duration: function() {
+        endTime: 0,
+        Duration: function () {
             return this.endTime - this.startTime;
         }
     };
