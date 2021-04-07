@@ -14,13 +14,13 @@ export function insertSessionData(session) {
         roomCapacity: session.roomCapacity
     }, (error) => {
         if (error) {
-          // The write failed...
-          console.log(error);
+            // The write failed...
+            console.log(error);
         } else {
-          // Data saved successfully!
-          console.log("Session Inserted!")
+            // Data saved successfully!
+            console.log("Session Inserted!")
         }
-      });
+    });
 }
 
 export function insertPresenterData(presenter) {
@@ -31,13 +31,13 @@ export function insertPresenterData(presenter) {
         Phone: presenter.phone
     }, (error) => {
         if (error) {
-          // The write failed...
-          console.log(error);
+            // The write failed...
+            console.log(error);
         } else {
-          // Data saved successfully!
-          console.log("Presenter Inserted!")
+            // Data saved successfully!
+            console.log("Presenter Inserted!")
         }
-      });
+    });
 }
 
 export function insertTimeSlotsData(timeSlot) {
@@ -45,15 +45,15 @@ export function insertTimeSlotsData(timeSlot) {
         StartTime: timeslot.startTime,
         EndTime: timeSlot.endTime,
         Duration: timeSlot.duration
-    },  (error) => {
+    }, (error) => {
         if (error) {
-          // The write failed...
-          console.log(error);
+            // The write failed...
+            console.log(error);
         } else {
-          // Data saved successfully!
-          console.log("Timeslot Inserted!")
+            // Data saved successfully!
+            console.log("Timeslot Inserted!")
         }
-      });
+    });
 }
 
 export function insertRoomsData(room) {
@@ -62,68 +62,76 @@ export function insertRoomsData(room) {
         Capacity: room.capacity
     }, (error) => {
         if (error) {
-          // The write failed...
-          console.log(error);
+            // The write failed...
+            console.log(error);
         } else {
-          // Data saved successfully!
-          console.log("Room Insterted!");
+            // Data saved successfully!
+            console.log("Room Insterted!");
         }
     });
 }
 
 
 export function retrieveSingleSessionData(name) {
-  var ref = firebase.database().ref('session/');
+    var ref = firebase.database().ref('session/');
 
-  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
-    return snapshot.key;});
+    ref.orderByChild("name").equalTo(name).on("Value", function (snapshot) {
+        return snapshot.key;
+    });
 }
 
 export function retrieveAllSessionData() {
-  var ref = firebase.database().ref('session/');
-  
-  ref.orderByKey().on("child_added", function(snapshot) {
-    return snapshot.key;});
+    var ref = firebase.database().ref('session/');
+
+    ref.orderByKey().on("child_added", function (snapshot) {
+        return snapshot.key;
+    });
 }
 
 export function retrieveSingleTimeslotData(startTime) {
-  var ref = firebase.database().ref('timeslots/');
-  
-  ref.orderByChild("startTime").equalTo(startTime).on("Value", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('timeslots/');
+
+    ref.orderByChild("startTime").equalTo(startTime).on("Value", function (snapshot) {
+        return snapshot.key;
+    });
+}
 
 export function retrieveAllTimeslotData() {
-  var ref = firebase.database().ref('timeslots/');
-  
-  ref.orderByKey().on("child_added", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('timeslots/');
+
+    ref.orderByKey().on("child_added", function (snapshot) {
+        return snapshot.key;
+    });
+}
 
 export function retrieveSinglePresenterData(name) {
-  var ref = firebase.database().ref('presenters/');
-  
-  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('presenters/');
+
+    ref.orderByChild("name").equalTo(name).on("Value", function (snapshot) {
+        return snapshot.key;
+    });
+}
 
 export function retrieveAllPresenterData() {
-  var ref = firebase.database().ref('presenters/');
-  
-  ref.orderByKey().on("child_added", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('presenters/');
+
+    ref.orderByKey().on("child_added", function (snapshot) {
+        return snapshot.key;
+    });
+}
 
 export function retrieveSingleRoomData(name) {
-  var ref = firebase.database().ref('rooms/');
-  
-  ref.orderByChild("name").equalTo(name).on("Value", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('rooms/');
+
+    ref.orderByChild("name").equalTo(name).on("Value", function (snapshot) {
+        return snapshot.key;
+    });
+}
 
 export function retrieveAllRoomData() {
-  var ref = firebase.database().ref('rooms/');
-  
-  ref.orderByKey().on("child_added", function(snapshot) {
-    return snapshot.key;});
-  }
+    var ref = firebase.database().ref('rooms/');
+
+    ref.orderByKey().on("child_added", function (snapshot) {
+        return snapshot.key;
+    });
+}
