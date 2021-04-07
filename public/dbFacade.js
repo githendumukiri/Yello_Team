@@ -1,6 +1,6 @@
 import {insertSessionData, insertPresenterData, insertTimeSlotsData, insertRoomsData} from "./dbController";
 
-export function formateSession(name, startTime, endTime, presenterName, presenterEmail, presenterPhone, roomName, roomCapacity) {
+export function formatSession(name, startTime, endTime, presenterName, presenterEmail, presenterPhone, roomName, roomCapacity) {
     //create sessions obj
     let session = {
         name: '',
@@ -22,7 +22,7 @@ export function formateSession(name, startTime, endTime, presenterName, presente
     insertSessionData(session);
 };
 
-export function formateTimeSlot(startTime, endTime) {
+export function formatTimeSlot(startTime, endTime) {
     //create timeslot obj
     let timeslot = {
         startTime: 0,
@@ -37,7 +37,7 @@ export function formateTimeSlot(startTime, endTime) {
     insertTimeSlotsData(timeslot);
 };
 
-export function formatePresenter(name, email, dayOfPhone, phone) {
+export function formatPresenter(name, email, dayOfPhone, phone) {
     //create Presenter obj
     let presenter = {
         Name: '',
@@ -51,7 +51,7 @@ export function formatePresenter(name, email, dayOfPhone, phone) {
     insertPresenterData(presenter);
 }
 
-export function formateRoom(name, cap) {
+export function formatRoom(name, cap) {
     //create Room obj
     let room = {
         Name: '',
