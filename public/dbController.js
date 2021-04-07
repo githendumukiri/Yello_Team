@@ -42,7 +42,7 @@ export function insertPresenterData(presenter) {
 
 export function insertTimeSlotsData(timeSlot) {
     firebase.database().ref('timeslots/').set({
-        StartTime: timeslot.startTime,
+        StartTime: timeSlot.startTime,
         EndTime: timeSlot.endTime,
         Duration: timeSlot.duration
     }, (error) => {
