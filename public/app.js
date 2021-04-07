@@ -1,3 +1,6 @@
+import firebase from "firebase/app";
+import "firebase/database";
+
 const db = firebase.firestore();
 const sessionRef = db.collection("sessions");
 const sessionName = document.querySelector("#sessionNameBox");

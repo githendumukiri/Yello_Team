@@ -1,0 +1,7 @@
+{
+  "name": "Yellow-Team",
+  "version": "1.0.0",
+  "dependencies": {
+    "firebase": "^8.3.2"
+  }
+}
