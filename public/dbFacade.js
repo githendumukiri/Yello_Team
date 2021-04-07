@@ -1,5 +1,4 @@
-import {insertSessionData, insertPresenterData, insertTimeSlotsData, insertRoomsData} from
-"dbController";
+import {insertSessionData, insertPresenterData, insertTimeSlotsData, insertRoomsData} from "./dbController";
 
 export function formateSession(name, startTime, endTime, presenterName, presenterEmail, presenterPhone, roomName, roomCapacity) {
     //create sessions obj
