@@ -25,9 +25,9 @@ export function insertSessionData(session) {
 
 export function insertPresenterData(presenter) {
     firebase.database().ref('presenters/' + presenter.name).set({
-        Name: presnter.name,
-        Email: presneter.email,
-        DayOfPhone: presneter.dayOfPhone,
+        Name: presenter.name,
+        Email: presenter.email,
+        DayOfPhone: presenter.dayOfPhone,
         Phone: presenter.phone
     }, (error) => {
         if (error) {
@@ -41,7 +41,7 @@ export function insertPresenterData(presenter) {
 }
 
 export function insertTimeSlotsData(timeSlot) {
-    firebase.databse().ref('timeslots/').set({
+    firebase.database().ref('timeslots/').set({
         StartTime: timeslot.startTime,
         EndTime: timeSlot.endTime,
         Duration: timeSlot.duration
